@@ -62,3 +62,13 @@ vim.keymap.set("i", "kj", "<Esc>", {
   noremap = true,
   silent = true,
 })
+
+
+vim.cmd("colorscheme tokyonight")
+
+vim.keymap.set("n", "<S-l>", ":bnext<CR>")
+vim.keymap.set("n", "<S-h>", ":bprev<CR>")
+
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh<CR>")
+vim.keymap.set("n", "<leader>n", ":NvimTreeFindFile<CR>")

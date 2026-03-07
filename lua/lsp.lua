@@ -35,4 +35,3 @@ local on_attach = function(_, bufnr)
     lsp.buf.format({ async = true })
   end, "Format buffer")
 end
-
