@@ -47,16 +47,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-
--- shifting numbers and symbols
-local nums = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' }
-local specials = { '!', '@', '#', '$', '%', '^', '&', '*', '(', ')' }
-
-for i = 1, #nums do
-  vim.keymap.set('i', nums[i], specials[i], opts)
-  vim.keymap.set('i', specials[i], nums[i], opts)
-end
-
 -- escaping without using the real escape
 vim.keymap.set("i", "kj", "<Esc>", {
   noremap = true,
