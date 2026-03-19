@@ -37,6 +37,22 @@ vim.cmd('set number')
 
 require("lsp")
 
+-- enables data type in RUST
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+    if client and client.server_capabilities.inlayHintProvider then
+      pcall(vim.lsp.inlay_hint.enable, true, { bufnr = args.buf })
+    end
+  end,
+})
+
+vim.api.nvim_set_hl(0, "LspInlayHint", {
+  fg = "#6c7086", -- soft gray
+  italic = true,
+})
+
 -- auto format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function(args)

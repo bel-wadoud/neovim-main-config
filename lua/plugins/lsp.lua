@@ -109,6 +109,17 @@ return {
             check = {
               command = "clippy",
             },
+
+            inlayHints = {
+              bindingModeHints = { enable = true },
+              chainingHints = { enable = true },
+              closingBraceHints = { enable = true },
+              closureReturnTypeHints = { enable = "with_block" },
+              lifetimeElisionHints = { enable = "always" },
+              parameterHints = { enable = true },
+              reborrowHints = { enable = true },
+              typeHints = { enable = true },
+            },
           },
         },
       })
